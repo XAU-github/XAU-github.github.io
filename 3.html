@@ -1,0 +1,407 @@
+ <!--首页-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平面展示</title>
+    <link rel="icon" type="image/x-icon" href="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" />
+    <style>
+        *{
+            margin: auto;
+            /* background-color: #f8fadb; */
+        }
+        #head{
+            width:100%;
+            height: 100px;
+            background-image: url("https://pic.imgdb.cn/item/642d135fa682492fccde13a7.png");
+            background-repeat: repeat;
+        }
+        #head2{
+            margin: 0px 0px 0px 15%;
+            width: 85%;/*图片所在div长85%*/
+            height: 100px;
+            border:0;
+            float: left;
+        }
+        #h2pic1{
+            width: 23%;
+            height: 100px;
+            float: left;
+            padding: 5px 0px 5px 0px;
+            /* border:1px solid #333333; */
+        }
+        #h2pic2{
+            width: 50%;
+            height: 100px;
+            float: left;
+            padding: 18px 0px 0px 0px;
+            /* border:1px solid #333333; */
+        }
+        #time{
+            margin: 10px 0px 0px 0px;/*上右下左外距*/
+            width: 14%;
+            height: auto;
+            float: right;/*左浮动*/
+            text-align: center;
+            color: #3378d7;
+            /* background-color: rgb(252, 252, 252);时钟背景颜色 */
+            font-size: 15px;/*时间字体大小*/
+            /* border:1px solid #333333; */
+        } 
+        #menu{
+            padding-left:15%;/*导航栏位置据开头*/
+            margin:0 auto;
+            text-align:center;
+            /* width:100%; */
+            height:60px;
+            background:#f8fadb;
+            border-bottom:1px solid #7f0808;/*底部边框类型颜色*/
+        }
+        #menu ul{
+            margin:0px;
+            padding:0px;
+            text-align:center;/*文本居中*/
+        }
+        .submenu{
+            width:900px;/*二级盒子长*/
+            height:28px;
+            text-align:center;
+        }
+        #menu ul li{
+            height:30px;
+            width:115px;
+            list-style:none;
+            float:left;
+            display:inline;/*设置对象作为行内元素*/
+            font:0.9em Arial,Helvetica,sana-serif;/*列表字体属性*/
+            text-align:center;
+        }
+        ul li a{
+            color:#3378d7;/*一级导航字体颜色*/
+            width:114px;
+            margin:0px;
+            padding:0px 0px 0px 0px ;
+            text-decoration:none;
+            display:block;/*设置成块级元素*/
+            background:#f8fadb;/*一级导航块颜色*/
+            line-height:29px;
+            border-bottom:1px solid #ccc;
+        }
+        ul li .submenu ul li{
+            height :25px;/*二级列表高度*/
+        }
+        ul li .submenu ul li a{
+            color: #eeb01f;/*二级字体颜色*/
+            background:rgb(64, 67, 67);/*二级导航栏本身背景*/
+        }
+        ul li a:hover{
+            background:#ffff;/*一级背景*/
+            border-bottom:1px dashed red;/*边框底部颜色类型*/
+        }
+        ul li .submenu{
+            display:none;/*隐藏二级导航*/
+        }
+        .submenu ul li{
+            height:24px;
+            width:113px;
+            list-style:none;/*列标：无*/
+            float:left;
+            display:inline;
+            font:0.8em Arial, Helvetica, sans-serif;
+            text-align:center; 
+        }
+        ul li:hover .submenu{
+            display:block;
+        }
+        ul li .submenu ul li a:hover{
+            color: #FFF;/*滑动时字体颜色*/
+            background:rgb(6, 75, 100);/*二级导航滑动时背景*/
+        }
+        a{
+            text-decoration: none;/*无下划线*/
+        }
+        /* 内容css */
+        #le{
+            width: 15%;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            float: left;
+        }
+        #cen{
+            margin: 0;
+            width: 70%;
+            height: auto;
+            background-color: #fafbe0;
+            float: left;
+            /* border-top:10px solid #3378d7;    */
+            border-bottom:10px solid #3378d7;   
+        }
+        #b11{
+            color: #3378d7;
+        }
+        #cen1{
+            margin: 30px;
+            width: auto;
+            height: auto;
+            border-style: dashed;
+            border-color: rgb(243, 183, 104);
+            border-radius: 100px 30px;
+            padding: 2em;
+        }
+        #c1p2{
+            width: 70%;
+            height: 1140px;
+            float: left;
+            border : 1px solid #000000;
+            padding: 2px 0px 2px 0px;
+        }
+        #c1p21{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        #c1p22{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        #c1p23{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        #c1p24{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        #c1p25{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        #c1p26{
+            width: 40%;
+            height:300px;
+            float: left;
+            padding: 2em;
+            /* border-bottom: 1px solid #333333;  */
+        }
+        .p1{
+            text-indent: 2em;
+        }
+        #ri{
+            width: 15%;
+            height: 1500px;
+            background-color: rgb(255, 255, 255);
+            float: right;
+        }
+        /* 底部css */
+        #bo{
+            width: 100%;
+            height: 170px;
+            padding: 0px 0px 0px 15% ;
+            float: left;
+            border-bottom: 20px solid #f8fadb;
+        }
+        #b1{
+            width: 70%;
+            height: 170px;
+            float: left;
+            /* margin: 0 auto; */
+            background-color: #fafbe0;
+            /* border:solid #e041d0; */
+        }
+        #b1pic1{
+            width: 20%;
+            height: 110px;
+            float: left;
+            /* border:solid #7f0808; */
+            padding: 50px 0px 0px 60px;
+        }
+        #b1p{
+            width: 60%;
+            height: auto;
+            float: left;
+            /* border:solid #49ae2a; */
+            padding: 30px 30px 40px 80px;
+        }
+        #b1p1{/*友情链接*/
+            color: blue;
+            align-items: center;
+        }
+        #b1p2{
+            color: #010000;
+            align-items: center;
+        }
+        .b1{
+            color: #3377d7;
+        }
+        /* #divpic:hover{
+            cursor: pointer;
+            transform: rotateX(30deg);
+            opacity: 1;
+        } */
+    </style>
+<!-- 头部时间js -->
+    <script>
+        function showTime(){
+            var time = new Date();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+            var year = time.getUTCFullYear();
+            var month = time.getUTCMonth()+1;
+            var day = time.getUTCDate();
+            var mytime = year + "年" + month + "月" + day + "日" + hour + ":" +minute+ ":" +second;
+            document.getElementById("time").innerHTML= mytime;
+            setTimeout("showTime()",1000);
+        }
+    </script>
+</head>
+<body>
+    <!--导航栏上的头部-->
+    <div id="head" class="">
+        <div id="head2">
+            <div id="h2pic1"><a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" width="45%" height="90px"></a></div>
+            <div id="h2pic2"><img src="https://pic.imgdb.cn/item/64297d22a682492fccbb2b52.png" width="45%" height="90px"></div>
+            <!-- <div id="h2p"><h1>古&nbsp驿&nbsp之&nbsp旅&nbsp文&nbsp化&nbsp馆</h1></div> -->
+            <div id="time"> 
+                <p >
+                    <script>
+                        showTime();
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+     <!--导航栏开始-->
+     <div id="menu"  class="">
+        <ul>
+            <li><a href="https://xau-github.github.io/">网站首页</a></li>
+            <li><a href="">总体概况</a>
+            <div id=""class="submenu">
+                <ul>
+                    <li><a href="2-1.html">项目概述</a></li>
+                    <li><a href="2-2.html">历史背景</a></li>
+                    <li><a href="2-3.html">互联网文化背景</a></li>
+                    <li><a href="2-4.html">行业市场背景</a></li>
+                       
+                </ul>
+            </div>
+            </li>
+            
+            <li><a href="">网上展厅</a>
+            <div id=""class="submenu">
+                <ul>
+                   <li><a href="3.html">平面展示</a></li>
+                </ul>
+            </div>
+            </li> 
+
+            <li><a href="">文创产品</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="4.html">点击这里</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="">关于我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="5-1.html">经营理念</a></li>
+                         
+                        <li><a href="5-2.html">品牌介绍</a></li>
+                        <li><a href="5-3.html">组织架构</a></li>
+                        <li><a href="5-4.html">营销策略</a></li>
+                    </ul>
+            
+                </div>
+            </li>
+
+            <li><a href="">联系我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="6-1.html">创意留言</a></li>
+                        <li><a href="6-2.html">注册用户</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+            </div>
+    <!--body导航栏之下-->
+    <div id="le"></div>
+
+    <!--新闻主内容-->
+    <div id="c1p2">
+        <h2 id="b11" align="center" >平面展示</h2><hr width="95%" style="border:solid"></hr>
+        <div id="c1p21">
+            
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d88bfa682492fcca93150.png"  alt title="贵妃传" width="350px" height="250px" align="center"></div>
+            <p class="p1">《杨贵妃传》是一本关于唐代四大美女之一杨玉环的历史小说，讲述了她的传奇故事和人生经历。</p>
+        </div>
+        <div id="c1p22">
+            
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d88e8a682492fcca973c6.jpg" alt title="杨贵妃像" width="350px" height="250px" align="center"></div>
+            <p class="p1">杨贵妃像呈现她端庄优美的容貌和身姿，一般带有唐朝风格的服饰和发饰，具有浓厚的历史和文化氛围。</p>
+        </div>
+        <div id="c1p23">
+            
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d89dba682492fccaaf595.jpg" alt title="石马石像" width="350px" height="250px" align="center"></div>
+            <p class="p1">马匹雕像展现优美的马型与姿态，呈现出马的雄浑、威武和美丽，是艺术形式中的重要组成部分。</p>
+        </div>
+        <div id="c1p24">
+            
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d8a21a682492fccab5950.jpg" alt title="黄山宫" width="350px" height="250px" align="center"></div>
+            <p class="p1">马嵬镇历史文化源远流长。有道教始祖老子传经布道北依莽山的黄山宫，“古柏参天，泉水哗哗，果林遍野，山川秀丽，风景郁然”。</p>
+        </div>
+        <div id="c1p25">
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d9a82a682492fccc75b94.png" alt title="马嵬兵变" width="350px" height="250px" align="center"></div>
+            <p class="p1">马嵬兵变是指唐高宗李治的长子李建成和幼子李元吉联合王世充在马嵬驿发动的政变事件，这一事件对唐朝的历史产生了深远的影响。</p>
+            
+        </div>
+        <div id="c1p26">
+            <div id="divpic"><img src="https://pic.imgdb.cn/item/642d8996a682492fccaa869b.jpg" alt title="贵妃墓" width="350px" height="250px" align="center"></div>
+            <p class="p1">杨贵妃墓则是位于西安市雁塔区临潼区北三十公里的一座古代皇家墓葬，是中国历史上著名的文化遗产之一。</p>
+            
+        </div>
+        
+    </div>
+
+    <!--底部栏，每页一样-->
+    <div id="bo">
+        <div id="b1">
+            <div id="b1pic1">
+                <a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" alt="古驿之旅文化馆" width=100px;></a>
+            </div>
+            <div id="b1p">
+                <p id="b1p1">友情链接:</p><br>
+                <p id="b1p2">
+                    <a href="http://www.chnmuseum.cn/" class="b1">中国国家博物馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.dpm.org.cn/Home.html"   class="b1">故宫博物院</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.sxhm.com/"  class="b1">陕西历史博物馆</a><br>
+                    <a href="http://www.sdam.org.cn/index.html"  class="b1">山东省美术馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="http://www.shawh.org.cn/"  class="b1">陕西数字文化网</a>&nbsp;&nbsp;
+                </p><br>
+                <footer>
+                    <p id="b1p2">古驿之旅文化馆 © 2023</p>
+                </footer>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

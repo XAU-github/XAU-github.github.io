@@ -1,0 +1,348 @@
+<!--首页-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经营理念</title>
+    <link rel="icon" type="image/x-icon" href="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" />
+    <style>
+        *{
+            margin: auto;
+            /* background-color: #f8fadb; */
+        }
+        #head{
+            width:100%;
+            height: 100px;
+            background-image: url("https://pic.imgdb.cn/item/642d135fa682492fccde13a7.png");
+            background-repeat: repeat;
+        }
+        #head2{
+            margin: 0px 0px 0px 15%;
+            width: 85%;/*图片所在div长85%*/
+            height: 100px;
+            border:0;
+            float: left;
+        }
+        #h2pic1{
+            width: 23%;
+            height: 100px;
+            float: left;
+            padding: 5px 0px 5px 0px;
+            /* border:1px solid #333333; */
+        }
+        #h2pic2{
+            width: 50%;
+            height: 100px;
+            float: left;
+            padding: 18px 0px 0px 0px;
+            /* border:1px solid #333333; */
+        }
+        #time{
+            margin: 10px 0px 0px 0px;/*上右下左外距*/
+            width: 14%;
+            height: auto;
+            float: right;/*左浮动*/
+            text-align: center;
+            color: #3378d7;
+            /* background-color: rgb(252, 252, 252);时钟背景颜色 */
+            font-size: 15px;/*时间字体大小*/
+            /* border:1px solid #333333; */
+        } 
+        #menu{
+            padding-left:15%;/*导航栏位置据开头*/
+            margin:0 auto;
+            text-align:center;
+            /* width:100%; */
+            height:60px;
+            background:#f8fadb;
+            border-bottom:1px solid #7f0808;/*底部边框类型颜色*/
+        }
+        #menu ul{
+            margin:0px;
+            padding:0px;
+            text-align:center;/*文本居中*/
+        }
+        .submenu{
+            width:900px;/*二级盒子长*/
+            height:28px;
+            text-align:center;
+        }
+        #menu ul li{
+            height:30px;
+            width:115px;
+            list-style:none;
+            float:left;
+            display:inline;/*设置对象作为行内元素*/
+            font:0.9em Arial,Helvetica,sana-serif;/*列表字体属性*/
+            text-align:center;
+        }
+        ul li a{
+            color:#3378d7;/*一级导航字体颜色*/
+            width:114px;
+            margin:0px;
+            padding:0px 0px 0px 0px ;
+            text-decoration:none;
+            display:block;/*设置成块级元素*/
+            background:#f8fadb;/*一级导航块颜色*/
+            line-height:29px;
+            border-bottom:1px solid #ccc;
+        }
+        ul li .submenu ul li{
+            height :25px;/*二级列表高度*/
+        }
+        ul li .submenu ul li a{
+            color: #eeb01f;/*二级字体颜色*/
+            background:rgb(64, 67, 67);/*二级导航栏本身背景*/
+        }
+        ul li a:hover{
+            background:#ffff;/*一级背景*/
+            border-bottom:1px dashed red;/*边框底部颜色类型*/
+        }
+        ul li .submenu{
+            display:none;/*隐藏二级导航*/
+        }
+        .submenu ul li{
+            height:24px;
+            width:113px;
+            list-style:none;/*列标：无*/
+            float:left;
+            display:inline;
+            font:0.8em Arial, Helvetica, sans-serif;
+            text-align:center; 
+        }
+        ul li:hover .submenu{
+            display:block;
+        }
+        ul li .submenu ul li a:hover{
+            color: #FFF;/*滑动时字体颜色*/
+            background:rgb(6, 75, 100);/*二级导航滑动时背景*/
+        }
+        a{
+            text-decoration: none;/*无下划线*/
+        }
+        /* 内容css */
+        #le{
+            width: 15%;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            float: left;
+        }
+        #cen{
+            margin: 0;
+            width: 70%;
+            height: auto;
+            background-color: #fafbe0;
+            float: left;
+            /* border-top:10px solid #3378d7;    */
+            border-bottom:10px solid #3378d7;   
+        }
+        #b11{
+            color: #3378d7;
+        }
+        #cen1{
+            margin: 30px;
+            width: auto;
+            height: auto;
+            border-style: dashed;
+            border-color: rgb(243, 183, 104);
+            border-radius: 100px 30px;
+            padding: 2em;
+        }
+        .p1{
+            text-indent: 2em;font-family: 黑体;line-height: 1.5em;
+        }
+        .ppic1{
+            border-radius: 20px 20px;
+        } 
+        
+        #ri{
+            width: 15%;
+            height: 1500px;
+            background-color: rgb(255, 255, 255);
+            float: right;
+        }
+        /* 底部css */
+        #bo{
+            width: 100%;
+            height: 170px;
+            padding: 0px 0px 0px 15% ;
+            float: left;
+            border-bottom: 20px solid #f8fadb;
+        }
+        #b1{
+            width: 70%;
+            height: 170px;
+            float: left;
+            /* margin: 0 auto; */
+            background-color: #fafbe0;
+            /* border:solid #e041d0; */
+        }
+        #b1pic1{
+            width: 20%;
+            height: 110px;
+            float: left;
+            /* border:solid #7f0808; */
+            padding: 50px 0px 0px 60px;
+        }
+        #b1p{
+            width: 60%;
+            height: auto;
+            float: left;
+            /* border:solid #49ae2a; */
+            padding: 30px 30px 40px 80px;
+        }
+        #b1p1{/*友情链接*/
+            color: blue;
+            align-items: center;
+        }
+        #b1p2{
+            color: #010000;
+            align-items: center;
+        }
+        .b1{
+            color: #3377d7;
+        }
+        #divpic:hover{
+            cursor: pointer;
+            transform: rotateX(30deg);
+            opacity: 1;
+        }
+    </style>
+<!-- 头部时间js -->
+    <script>
+        function showTime(){
+            var time = new Date();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+            var year = time.getUTCFullYear();
+            var month = time.getUTCMonth()+1;
+            var day = time.getUTCDate();
+            var mytime = year + "年" + month + "月" + day + "日" + hour + ":" +minute+ ":" +second;
+            document.getElementById("time").innerHTML= mytime;
+            setTimeout("showTime()",1000);
+        }
+    </script>
+</head>
+<body>
+    <!--导航栏上的头部-->
+    <div id="head" class="">
+        <div id="head2">
+            <div id="h2pic1"><a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" width="45%" height="90px"></a></div>
+            <div id="h2pic2"><img src="https://pic.imgdb.cn/item/64297d22a682492fccbb2b52.png" width="45%" height="90px"></div>
+            <!-- <div id="h2p"><h1>古&nbsp驿&nbsp之&nbsp旅&nbsp文&nbsp化&nbsp馆</h1></div> -->
+            <div id="time"> 
+                <p >
+                    <script>
+                        showTime();
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+     <!--导航栏开始-->
+     <div id="menu"  class="">
+        <ul>
+            <li><a href="https://xau-github.github.io/">网站首页</a></li>
+            <li><a href="">总体概况</a>
+            <div id=""class="submenu">
+                <ul>
+                    <li><a href="2-1.html">项目概述</a></li>
+                    <li><a href="2-2.html">历史背景</a></li>
+                    <li><a href="2-3.html">互联网文化背景</a></li>
+                    <li><a href="2-4.html">行业市场背景</a></li>
+                       
+                </ul>
+            </div>
+            </li>
+            
+            <li><a href="">网上展厅</a>
+            <div id=""class="submenu">
+                <ul>
+                   <li><a href="3.html">平面展示</a></li>
+                </ul>
+            </div>
+            </li> 
+
+            <li><a href="">文创产品</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="4.html">点击这里</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="">关于我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="5-1.html">经营理念</a></li>
+                        <li><a href="5-2.html">品牌介绍</a></li>
+                        <li><a href="5-3.html">组织架构</a></li>
+                        <li><a href="5-4.html">营销策略</a></li>
+                    </ul>
+            
+                </div>
+            </li>
+
+            <li><a href="">联系我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="6-1.html">创意留言</a></li>
+                        <li><a href="6-2.html">注册用户</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+            </div>
+    <!--body导航栏之下-->
+    <div id="le"></div>
+
+    <!--新闻主内容-->
+    <div id="cen">
+        <h1 id="b11" align="center" >经营理念</h1><hr width="90%" style="border:double"></hr>
+        <div id="cen1">
+            <p class="p1">1.经营理念：</p><br>
+            <p class="p1">公司理念为：“顾客至上，文化先行”。本公司力求时刻紧跟消费者心理变化、开创、完善服务项目，广泛接纳员工意见与建议，把握住市场脉搏，进而引领消费者需求，以人性化管理为基石，在文化体验馆行业中走出一条特色文化兼展示之路。体验经济观念下的体验营销就是要从消费者的感官、情感、思考、行动和联想五个角度重新定义、设计营销策略。以服务为核心，以商品为素材，为消费者创造出有价值的旅游经历。因此驿站历史文化馆营销要从情景和内容出发，塑造感官体验及思维认同，以此抓住消费者的注意力，并为产品找到新的生存价值与空间。体验经济下的营销策略是以客户需求和体验为导向经营的方式，此时产品几乎完全隐藏到服务背后，产品依赖于体验服务所创造的条件。因此，我们制定出以下战略：</p>
+            <p class="p1">（1）建立适度规模的战略管理体系，积极发掘营销策略。</p>
+            <p class="p1">（2）重点建立良好的品牌形象。实行品牌项目经理制，保证公司品牌项目成功落地。</p>
+            <p class="p1">（3）重视已有顾客的忠诚度，积极与老顾客联系，通过口碑取胜。</p><br>
+            <p class="p1">2.本项目围绕古驿站文化来展开，主要针对历史、文化等多方面来进行宣传推广，本项目主要以创新公共文化服务融合时代特色，继承古代优秀传统文化等方面来进行；以浓厚的“古驿站历史文化”为主线，努力构建团队建设为总的建设宗旨，对团队进行合理分工安排，统筹管理来进行项目的推进与建设。文化建设宗旨主要围绕以下大方面来进行建设推广：</p><br>
+            <p class="p1">（1）合理利用时代背景与政策</p>
+            <p class="p1">时代的大背景下，数据化正占据主导的地位，我们的发展紧紧围绕互联网时代特色；融入虚拟化，数字化的元素来帮助文化变得生动灵活且具有一定的时代特征，且把政策带来的优势运用到宣传推广应用层面，双减政策下，大学生主体能有更加充裕的时间去了解我们的平台以及推广的文化；而且双减政策本身也算作一种教育性的政策，也与我们古书驿站的文化系统相联系；所以服务宗旨层面也是顾客至上，满足消费者群体精神放松同样宣传传统优秀文化形成良好的文化效益；获取大众喜爱的同时也能够实现社会效益，这也是我们追求的宗旨所在。</p><br>
+            <p class="p1">（2）团队分工明确，加强凝聚力</p>
+            <p class="p1">我们的第二个宗旨就是将团队进行统筹管理合理分工，把每部分进行合理安排，尽可能提高团队运作效率；团队的运行效率提高了，我们才能获取更大的利益，一个团队如果不团结，那么整体效益就不会很强，我们团队以不同学院的优势进行重组，每个人都按照自己的优势各司其职；主要划分撰写稿件，收集资料的问题，进行后期反思等问题，平台宣传推广，品牌创设等问题都需要分工合作进行，因此团队分工明确，加强整体凝聚力是我们产业继续发展下去的宗旨与方向。</p><br>
+            <p class="p1">（3）文化形式创新，文化内涵继承</p>
+            <p class="p1">我们的宗旨也是追求一种文化的外在形式创新，而内涵本质保持不变，将其中的优秀传统文化提取出来，放入我们的古驿站平台中去;采取一些外在的流行形式，比如游戏答题形式，动画翻转环节，虚拟现实体验历史文化等环节，在这种形式方面加强对受众主体的吸引力；形式的不断翻新，也是我们的可持续发展的一个宗旨和理念，但是我们在更新外在形式的过程中，却没有改变传统文化中的优秀部分，我们将其内涵继承下来，并让其在新时代发挥特色，以便实现我们的最终愿景，外在和内在的双重结合，既能保持原有的文化底蕴不变，又能以新的形式特点给人以眼前一亮的感觉。</p><br>
+            <p class="p1">（4）品牌建设，延长产业链，加强法律保障</p>
+            <p class="p1">我们在发展产业平台以及宣传推广工作中最重要的部分就是对品牌的建设与打造，品牌是一个产业扩大与可持续发展的显著标志；因此我们的宗旨一部分就是打造属于我们自身的古文化品牌，可以通过预设logo方面来进行小幅度确定品牌的标志，之后选取我们的特色部分，将其无限扩大，从而形成我们独有的知识产权，在品牌建立之后，我们则需要重视产业链的不断延长，产业链随着时代的发展逐渐具有多元化的标志；产业链的延长方向可以是文化创意层面也可以历史的厚度讲解层面，可以利用其他技术来对这个产业项目进行升华和总结，不断将我们已有存在的一条产业链尽可能地向上下游领域做拓展延申，这个宗旨的创立在于延长产业链可以提高产品的经济附加值和深加工的层次，提高产业的经济效益，是将这种文化资源优势转化为经济优势的一个重要途径。同样也可以对产业构成和发展的多元化起到重要作用，促进经济、社会和文化共同发展；也能够大大提高对市场的适应能力，扩大一种新的就业形式，而在我们做大做强之后,相关的文化产业也会在我们的带领之下进行发展和提高，从而提升整个地区的经济发展水平。那么在我们产生知识产权的过程中，我们需要得到一定的法律支持和保障，使我们的产权能够受到应有的保护，我们在这期间可以寻求法律专业的专家和学院的帮助，同时及时关注文化层面的法律法规的颁布情况，及时跟进，对现有的不足之处进行反思与改进，及时提出意见，促进平稳的发展也是我们的最终愿景和宗旨之一。</p>
+            <div><img class="ppic1" src="https://pic.imgdb.cn/item/642ac712a682492fccd859e7.png" width=90% height="420px" align="center"></div>
+            
+        </div>
+    </div>
+
+    <!--底部栏，每页一样-->
+    <div id="bo">
+        <div id="b1">
+            <div id="b1pic1">
+                <a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" alt="古驿之旅文化馆" width=100px;></a>
+            </div>
+            <div id="b1p">
+                <p id="b1p1">友情链接:</p><br>
+                <p id="b1p2">
+                    <a href="http://www.chnmuseum.cn/" class="b1">中国国家博物馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.dpm.org.cn/Home.html"   class="b1">故宫博物院</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.sxhm.com/"  class="b1">陕西历史博物馆</a><br>
+                    <a href="http://www.sdam.org.cn/index.html"  class="b1">山东省美术馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="http://www.shawh.org.cn/"  class="b1">陕西数字文化网</a>&nbsp;&nbsp;
+                </p><br>
+                <footer>
+                    <p id="b1p2">古驿之旅文化馆 © 2023</p>
+                </footer>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

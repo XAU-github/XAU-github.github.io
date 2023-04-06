@@ -1,0 +1,340 @@
+<!--首页-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历史背景</title>
+    <link rel="icon" type="image/x-icon" href="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" />
+    <style>
+        *{
+            margin: auto;
+            /* background-color: #f8fadb; */
+        }
+        #head{
+            width:100%;
+            height: 100px;
+            background-image: url("https://pic.imgdb.cn/item/642d135fa682492fccde13a7.png");
+            background-repeat: repeat;
+        }
+        #head2{
+            margin: 0px 0px 0px 15%;
+            width: 85%;/*图片所在div长85%*/
+            height: 100px;
+            border:0;
+            float: left;
+        }
+        #h2pic1{
+            width: 23%;
+            height: 100px;
+            float: left;
+            padding: 5px 0px 5px 0px;
+            /* border:1px solid #333333; */
+        }
+        #h2pic2{
+            width: 50%;
+            height: 100px;
+            float: left;
+            padding: 18px 0px 0px 0px;
+            /* border:1px solid #333333; */
+        }
+        #time{
+            margin: 10px 0px 0px 0px;/*上右下左外距*/
+            width: 14%;
+            height: auto;
+            float: right;/*左浮动*/
+            text-align: center;
+            color: #3378d7;
+            /* background-color: rgb(252, 252, 252);时钟背景颜色 */
+            font-size: 15px;/*时间字体大小*/
+            /* border:1px solid #333333; */
+        } 
+        #menu{
+            padding-left:15%;/*导航栏位置据开头*/
+            margin:0 auto;
+            text-align:center;
+            /* width:100%; */
+            height:60px;
+            background:#f8fadb;
+            border-bottom:1px solid #7f0808;/*底部边框类型颜色*/
+        }
+        #menu ul{
+            margin:0px;
+            padding:0px;
+            text-align:center;/*文本居中*/
+        }
+        .submenu{
+            width:900px;/*二级盒子长*/
+            height:28px;
+            text-align:center;
+        }
+        #menu ul li{
+            height:30px;
+            width:115px;
+            list-style:none;
+            float:left;
+            display:inline;/*设置对象作为行内元素*/
+            font:0.9em Arial,Helvetica,sana-serif;/*列表字体属性*/
+            text-align:center;
+        }
+        ul li a{
+            color:#3378d7;/*一级导航字体颜色*/
+            width:114px;
+            margin:0px;
+            padding:0px 0px 0px 0px ;
+            text-decoration:none;
+            display:block;/*设置成块级元素*/
+            background:#f8fadb;/*一级导航块颜色*/
+            line-height:29px;
+            border-bottom:1px solid #ccc;
+        }
+        ul li .submenu ul li{
+            height :25px;/*二级列表高度*/
+        }
+        ul li .submenu ul li a{
+            color: #eeb01f;/*二级字体颜色*/
+            background:rgb(64, 67, 67);/*二级导航栏本身背景*/
+        }
+        ul li a:hover{
+            background:#ffff;/*一级背景*/
+            border-bottom:1px dashed red;/*边框底部颜色类型*/
+        }
+        ul li .submenu{
+            display:none;/*隐藏二级导航*/
+        }
+        .submenu ul li{
+            height:24px;
+            width:113px;
+            list-style:none;/*列标：无*/
+            float:left;
+            display:inline;
+            font:0.8em Arial, Helvetica, sans-serif;
+            text-align:center; 
+        }
+        ul li:hover .submenu{
+            display:block;
+        }
+        ul li .submenu ul li a:hover{
+            color: #FFF;/*滑动时字体颜色*/
+            background:rgb(6, 75, 100);/*二级导航滑动时背景*/
+        }
+        a{
+            text-decoration: none;/*无下划线*/
+        }
+        /* 内容css */
+        #le{
+            width: 15%;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            float: left;
+        }
+        #cen{
+            margin: 0;
+            width: 70%;
+            height: auto;
+            background-color: #fafbe0;
+            float: left;
+            /* border-top:10px solid #3378d7;    */
+            border-bottom:10px solid #3378d7;   
+        }
+        #b11{
+            color: #3378d7;
+        }
+        #cen1{
+            margin: 30px;
+            width: auto;
+            height: auto;
+            border-style: dashed;
+            border-color: rgb(243, 183, 104);
+            border-radius: 100px 30px;
+            padding: 2em;
+        }
+        .p1{
+            text-indent: 2em;font-family: 黑体;line-height: 1.5em;
+        }
+        .ppic1{
+            border-radius: 20px 30px;
+        } 
+        
+        #ri{
+            width: 15%;
+            height: 1500px;
+            background-color: rgb(255, 255, 255);
+            float: right;
+        }
+        /* 底部css */
+        #bo{
+            width: 100%;
+            height: 170px;
+            padding: 0px 0px 0px 15% ;
+            float: left;
+            border-bottom: 20px solid #f8fadb;
+        }
+        #b1{
+            width: 70%;
+            height: 170px;
+            float: left;
+            /* margin: 0 auto; */
+            background-color: #fafbe0;
+            /* border:solid #e041d0; */
+        }
+        #b1pic1{
+            width: 20%;
+            height: 110px;
+            float: left;
+            /* border:solid #7f0808; */
+            padding: 50px 0px 0px 60px;
+        }
+        #b1p{
+            width: 60%;
+            height: auto;
+            float: left;
+            /* border:solid #49ae2a; */
+            padding: 30px 30px 40px 80px;
+        }
+        #b1p1{/*友情链接*/
+            color: blue;
+            align-items: center;
+        }
+        #b1p2{
+            color: #010000;
+            align-items: center;
+        }
+        .b1{
+            color: #3377d7;
+        }
+        #divpic:hover{
+            cursor: pointer;
+            transform: rotateX(30deg);
+            opacity: 1;
+        }
+    </style>
+<!-- 头部时间js -->
+    <script>
+        function showTime(){
+            var time = new Date();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+            var year = time.getUTCFullYear();
+            var month = time.getUTCMonth()+1;
+            var day = time.getUTCDate();
+            var mytime = year + "年" + month + "月" + day + "日" + hour + ":" +minute+ ":" +second;
+            document.getElementById("time").innerHTML= mytime;
+            setTimeout("showTime()",1000);
+        }
+    </script>
+</head>
+<body>
+    <!--导航栏上的头部-->
+    <div id="head" class="">
+        <div id="head2">
+            <div id="h2pic1"><a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" width="45%" height="90px"></a></div>
+            <div id="h2pic2"><img src="https://pic.imgdb.cn/item/64297d22a682492fccbb2b52.png" width="45%" height="90px"></div>
+            <!-- <div id="h2p"><h1>古&nbsp驿&nbsp之&nbsp旅&nbsp文&nbsp化&nbsp馆</h1></div> -->
+            <div id="time"> 
+                <p >
+                    <script>
+                        showTime();
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+     <!--导航栏开始-->
+     <div id="menu"  class="">
+        <ul>
+            <li><a href="https://xau-github.github.io/">网站首页</a></li>
+            <li><a href="">总体概况</a>
+            <div id=""class="submenu">
+                <ul>
+                    <li><a href="2-1.html">项目概述</a></li>
+                    <li><a href="2-2.html">历史背景</a></li>
+                    <li><a href="2-3.html">互联网文化背景</a></li>
+                    <li><a href="2-4.html">行业市场背景</a></li>
+                       
+                </ul>
+            </div>
+            </li>
+            
+            <li><a href="">网上展厅</a>
+            <div id=""class="submenu">
+                <ul>
+                   <li><a href="3.html">平面展示</a></li>
+                </ul>
+            </div>
+            </li> 
+
+            <li><a href="">文创产品</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="4.html">点击这里</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="">关于我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="5-1.html">经营理念</a></li>
+                         
+                        <li><a href="5-2.html">品牌介绍</a></li>
+                        <li><a href="5-3.html">组织架构</a></li>
+                        <li><a href="5-4.html">营销策略</a></li>
+                    </ul>
+            
+                </div>
+            </li>
+
+            <li><a href="">联系我们</a>
+                <div id=""class="submenu">
+                    <ul>
+                        <li><a href="6-1.html">创意留言</a></li>
+                        <li><a href="6-2.html">注册用户</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+            </div>
+    <!--body导航栏之下-->
+    <div id="le"></div>
+
+    <!--新闻主内容-->
+    <div id="cen">
+        <h1 id="b11" align="center" >历史背景</h1><hr width="90%" style="border:double"></hr>
+        <div id="cen1">
+            <p class="p1">中国古驿站发展经历了以下阶段：</p>
+            <p class="p1">直到秦始皇统一六国，建立了中国第一个统一政权以后，我国的驿站才算是真正地成为了一个制度。根据史料记载我国驿站制度在唐朝时期，不仅陆路上设有驿传，连水路上也同样有驿传，而且唐朝时期驿传的设置非常地密集。宋代人著的《五经总要》中曾提到过唐代的营州道上所设的驿站;到了辽代，中京大定府至东京辽阳府之间设置了驿站，有十四处驿馆；金代时，则在上京会宁府至燕京之间，沿辽西傍海道设置了驿站;为了适应军事需要，加强通信联络，金效仿宋王朝在辽宁地区建有的递铺。递铺一般建在有驻军的主要交通线附近，好像一个方形的小堡，四角插着黑旗；</p><br>
+            <div><img class="ppic1" src="https://pic.imgdb.cn/item/642ac03ba682492fcc924927.jpg" width="200px" height="140px" align="left"></div>
+            <p class="p1">到了元王朝，由于疆域辽阔，发展交通，强化了驿站制度，这也成为它巩固政权的重要手段，这时驿站也叫“站赤”，实际“站赤”是蒙古语驿站的译音；到了明代除开通沈阳至旅顺的驿站外，在其它干线道路上均设置了驿站，专门从事货物运输的组织，其主要任务是预付国家的军需、贡赋和赏赐之物；</p><br>
+            
+            <p class="p1">清顺治帝入关后，建都于北京，称原来的都城盛京为留都。盛京驿站基本上是沿袭明代驿站设置，不受行政区划的限制，而是根据交通状况而定。铺递用以传递公文。凡州县往来公文，都由铺递传送。盛京的铺递遍布全区。我国是世界上最早建立组织传递信息的国家之一，邮驿历史长达3000多年。具有代表性的古代驿站有盂城驿、鸡鸣山驿。盂城驿是一处水马驿站在江苏高邮古城南门大街外，是全国规模最大、保存最完好的古代驿站。鸡鸣山驿在河北怀来，是我国仅存的一座较完整的驿站。</p><br>
+            <p class="p1">古有驿站，今有物流。在历史发展的长河中，驿站、镖局等已经渐渐演变成今天的物流、快递，自始至终伴随着人类的发展脚步。事实上，现代物流快递的许多方式，都是在古人的智慧基础上进行优化与改良，包括驿站这种“运转中心”。作为古代供传递官府文书和军事情报的人或来往官员途中食宿、换马的场所，在通讯手段十分原始的情况下，驿站担负着各种政治、经济、文化、军事等方面的信息传递任务，因而在古代的信息交流或物资运输等方面具有着重大的作用，在当今社会下仍有作为传统文化载体的重要研究价值。通过对古驿站的深入了解，使人们感受古代交通运输系统以及信息传递的发展情况，使古驿站重新“活”起来。</p><br>
+        </div>
+    </div>
+
+    <!--底部栏，每页一样-->
+    <div id="bo">
+        <div id="b1">
+            <div id="b1pic1">
+                <a href="https://xau-github.github.io/"><img src="https://pic.imgdb.cn/item/642978b4a682492fccb3ef20.png" alt="古驿之旅文化馆" width=100px;></a>
+            </div>
+            <div id="b1p">
+                <p id="b1p1">友情链接:</p><br>
+                <p id="b1p2">
+                    <a href="http://www.chnmuseum.cn/" class="b1">中国国家博物馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.dpm.org.cn/Home.html"   class="b1">故宫博物院</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.sxhm.com/"  class="b1">陕西历史博物馆</a><br>
+                    <a href="http://www.sdam.org.cn/index.html"  class="b1">山东省美术馆</a>&nbsp;&nbsp;&nbsp;
+                    <a href="http://www.shawh.org.cn/"  class="b1">陕西数字文化网</a>&nbsp;&nbsp;
+                </p><br>
+                <footer>
+                    <p id="b1p2">古驿之旅文化馆 © 2023</p>
+                </footer>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
